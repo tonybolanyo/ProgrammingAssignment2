@@ -63,8 +63,13 @@ cacheSolve <- function(x, ...) {
     
     data <- x$get()
     
+    ## Assuming original matrix is invertible
+    ## we can use "solve" function to calculate
+    ## the inverted matrix
     inverse <- solve(data, ...)
     
+    
+    ## Save the value for future calls
     x$setinverse(inverse)
     
     ## Return a matrix that is the inverse of 'x'
